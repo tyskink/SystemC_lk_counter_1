@@ -10,7 +10,7 @@ int sc_main(int argc, char *argv[] )
 	
 	sc_signal<sc_uint<2> > count_ctrl;
 	sc_signal<sc_uint<LK_COUNTER_ADDRESSING_BIT_NUMBER> > count_data;
-	sc_signal<sc_uint<LK_COUNTER_ADDRESSING_BIT_NUMBER> > count_out;//could not using sc_out, no port in main function
+	sc_signal<sc_uint<LK_COUNTER_ADDRESSING_BIT_NUMBER> > count_out;//<//could not using sc_out, no port in main function
 
 	//Module Instantiations and Binding Signals
 	lk_counter counter("counter");

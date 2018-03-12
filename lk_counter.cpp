@@ -25,11 +25,11 @@ SC_MODULE(lk_counter)
 				{	//cout<<"counter:	working!"<<endl;
 					switch (count_ctrl.read())
 					{
-						case LK_COUNT_CONTROL_WAIT :											cout<<"counter:	wait!"<<endl;//do nothing
-						case LK_COUNT_CONTROL_INCR1:	count_buf=count_buf+1;					cout<<"counter:	incr 1!"<<endl;
-						case LK_COUNT_CONTROL_DIREC:	count_buf=count_data.read();			cout<<"counter:	direc!"<<endl;
-						case LK_COUNT_CONTROL_RELAT:	count_buf=count_buf+count_data.read();	cout<<"counter:	relate!"<<endl;
-						default :																cout<<"counter:	default!"<<endl;//do nothing
+						case LK_COUNT_CONTROL_WAIT :											cout<<"counter:	wait!"<<endl;	break;//do nothing
+						case LK_COUNT_CONTROL_INCR1:	count_buf=count_buf+1;					cout<<"counter:	incr 1!"<<endl;	break;
+						case LK_COUNT_CONTROL_DIREC:	count_buf=count_data.read();			cout<<"counter:	direc!"<<endl;	break;
+						case LK_COUNT_CONTROL_RELAT:	count_buf=count_buf+count_data.read();	cout<<"counter:	relate!"<<endl;	break;
+						default :																cout<<"counter:	default!"<<endl;	break;//do nothing
 					}					
 					//count_out.write(count_buf);
 				}
@@ -38,7 +38,7 @@ SC_MODULE(lk_counter)
 	SC_CTOR(lk_counter)
 		{
 			SC_METHOD(count);
-			sensitive<<reset;
+			sensitive<<reset.neg();
 			sensitive<<clock.pos();
 		}
 };//a new line

@@ -53,7 +53,7 @@ int sc_main(int argc, char *argv[] )
 	
 }//a new line
 /*
-sccom -g
+sccom -g *.cpp
 sccom -link
 vsim sc_main
 add wave -position insertpoint  \

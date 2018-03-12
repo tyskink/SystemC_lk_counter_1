@@ -6,7 +6,7 @@
 int sc_main(int argc, char *argv[] )
 {
 	//signal declarations
-	sc_clock clock ("clock",2,0.5,1,true);
+	sc_clock clock ("clock",2,0.5,1,true);	//sc_clock clock ("name",period,duty cycle,starttime,posedge first)
 	sc_signal<sc_logic>reset;
 	
 	sc_signal<sc_uint<2> > count_ctrl;
@@ -22,28 +22,31 @@ int sc_main(int argc, char *argv[] )
 	counter.count_data(count_data);
 	
 	//start
-	count_ctrl=LK_COUNT_CONTROL_INCR1;
-	sc_start(1,SC_NS);
+
 	//std::cout<<"testbench:	start!"<<endl;
 	//reset
 	// testbench could be putting here as a part of top level module
 	//clock=SC_LOGIC_0;	//using SC_LOGIC_0 or SC_LOGIC_1 for sc_signal<sc_logic> variables
 						//may using 0 or 1 for sc_signal<bool>
+						
+	//reset
 	sc_start(1,SC_NS);
 	reset=SC_LOGIC_1;
 	sc_start(1,SC_NS);
-	reset=SC_LOGIC_0;
-	
+	reset=SC_LOGIC_0;	
 	sc_start(1,SC_NS);
 	reset=SC_LOGIC_1;
 
+	//LK_COUNT_CONTROL_INCR1
+	count_ctrl=LK_COUNT_CONTROL_INCR1;
+	sc_start(10,SC_NS);	
 	
 	//LK_COUNT_CONTROL_DIREC
 	count_ctrl=LK_COUNT_CONTROL_DIREC;
 	count_data=2;
 	sc_start(1,SC_NS);	
 	count_ctrl=LK_COUNT_CONTROL_INCR1;
-	
+	sc_start(10,SC_NS);		
 
 	
 	//LK_COUNT_CONTROL_RELAT
@@ -51,7 +54,7 @@ int sc_main(int argc, char *argv[] )
 	count_data=2;
 	sc_start(1,SC_NS);	
 	count_ctrl=LK_COUNT_CONTROL_INCR1;
-	
+	sc_start(10,SC_NS);		
 	
 	
 	//LK_COUNT_CONTROL_WAIT
@@ -59,7 +62,10 @@ int sc_main(int argc, char *argv[] )
 	count_data=2;
 	sc_start(1,SC_NS);	
 	count_ctrl=LK_COUNT_CONTROL_INCR1;
+	sc_start(10,SC_NS);	
 	
+	
+	return 0;
 }//a new line
 /*
 sccom -g *.cpp

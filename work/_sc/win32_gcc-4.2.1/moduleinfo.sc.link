@@ -12,8 +12,8 @@ P0;clock;12;132;lk_counter.dbs;T6;F1;L4
 P0;reset;12;248;lk_counter.dbs;T6;F1;L4
 P0;count_out;20;364;lk_counter.dbs;T2;F1;L5
 V0;count_buf;0;480;lk_counter.dbs;T2;F1;L7
-N0;counter;(sc_core::sc_module_name);lk_counter.dbs;F1;L23
 N0;count;();lk_counter.dbs;F1;L10
+N0;counter;(sc_core::sc_module_name);lk_counter.dbs;F1;L23
 
 T9;int;5;134217728;4;4;0;0;<NONE>
 

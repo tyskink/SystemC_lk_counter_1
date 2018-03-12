@@ -21,8 +21,9 @@ int sc_main(int argc, char *argv[] )
 	counter.count_data(count_data);
 	
 	//start
+	count_ctrl=LK_COUNT_CONTROL_INCR1;
 	sc_start(1,SC_NS);
-	
+	//std::cout<<"testbench:	start!"<<endl;
 	//reset
 	// testbench could be putting here as a part of top level module
 	clock=SC_LOGIC_0;	//using SC_LOGIC_0 or SC_LOGIC_1 for sc_signal<sc_logic> variables
@@ -31,7 +32,7 @@ int sc_main(int argc, char *argv[] )
 	reset=SC_LOGIC_1;
 	sc_start(1,SC_NS);
 	reset=SC_LOGIC_0;
-	count_ctrl=LK_COUNT_CONTROL_INCR1;
+	
 	sc_start(1,SC_NS);
 	reset=SC_LOGIC_1;
 	for(int i=0;i<10;i++)
@@ -51,3 +52,16 @@ int sc_main(int argc, char *argv[] )
 	}
 	
 }//a new line
+/*
+sccom -g
+sccom -link
+vsim sc_main
+add wave -position insertpoint  \
+sim:/sc_main/counter/clock \
+sim:/sc_main/counter/reset \
+sim:/sc_main/counter/count_ctrl \
+sim:/sc_main/counter/count_data \
+sim:/sc_main/counter/count_out \
+sim:/sc_main/counter/count_buf
+run
+*/

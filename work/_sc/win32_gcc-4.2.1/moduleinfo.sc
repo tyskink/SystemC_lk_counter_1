@@ -1,7 +1,7 @@
 @0;moduleinfo.sc;5;17;0;gnuc;4;2;0
 
-F1;C:/Users/lk2v17/OneDrive - University of Southampton/SystemC/ModelSim/trying/lk_counter\lk_counter.cpp
-F0;C:/Users/lk2v17/OneDrive - University of Southampton/SystemC/ModelSim/trying/lk_counter\testbench.cpp
+F1;C:/Users/lk2v17/OneDrive - University of Southampton/SystemC/ModelSim/trying/lk_counter/lk_counter.cpp
+F0;C:\Users\lk2v17\OneDrive - University of Southampton\SystemC\ModelSim\trying\lk_counter\testbench.cpp
 
 
 M9;counter;19;134230016;512;512;0;0;lk_counter.dbs;F1;L2
@@ -10,10 +10,10 @@ P0;clock;12;132;lk_counter.dbs;T6;F1;L4
 P0;reset;12;248;lk_counter.dbs;T6;F1;L4
 P0;count_out;20;364;lk_counter.dbs;T2;F1;L5
 V0;count_buf;0;480;lk_counter.dbs;T2;F1;L7
-N0;count;();lk_counter.dbs;F1;L10
 N0;counter;(sc_core::sc_module_name);lk_counter.dbs;F1;L23
+N0;count;();lk_counter.dbs;F1;L10
 
-T8;int;5;0;4;4;0;0;<NONE>
+T8;int;5;134217728;4;4;0;0;<NONE>
 
 M7;lk_counter;19;12288;728;728;0;0;lk_counter.dbs;F1;L6
 B0;sc_core::sc_module;256;0;<NONE>;M4
@@ -23,12 +23,12 @@ P0;count_ctrl;12;364;lk_counter.dbs;T3;F1;L9
 P0;count_data;12;472;lk_counter.dbs;T0;F1;L10
 P0;count_out;20;580;lk_counter.dbs;T0;F1;L11
 V0;count_buf;0;696;lk_counter.dbs;T0;F1;L13
-N0;lk_counter;(sc_core::sc_module_name);lk_counter.dbs;F1;L36
+N0;lk_counter;(sc_core::sc_module_name);lk_counter.dbs;F1;L39
 N0;count;();lk_counter.dbs;F1;L16
 
 T6;sc_logic;14;4096;1;12;0;0;<NONE>
 
-M5;sc_main;19;8320;0;0;0;0;testbench.dbs;F0;L6
+M5;sc_main;19;134226048;0;0;0;0;testbench.dbs;F0;L6
 S0;clock;2;0;testbench.dbs;T6;F0;L9
 S0;reset;2;0;testbench.dbs;T6;F0;L9
 S0;count_ctrl;2;0;testbench.dbs;T3;F0;L11

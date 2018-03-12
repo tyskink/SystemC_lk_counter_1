@@ -14,23 +14,26 @@ SC_MODULE(lk_counter)
 
 	void count()
 		{
+		count_buf=1;
 			if(reset.read()==0)
 				{
-					count_buf=0;
-					count_out.write(0);
+					cout<<"counter:	reset!"<<endl;
+					count_buf=1;
+					//count_out.write(count_buf);
 				}
 			else
-				{	
-					switch (count_data.read())
+				{	cout<<"counter:	working!"<<endl;
+					switch (count_ctrl.read())
 					{
 						case LK_COUNT_CONTROL_WAIT :;//do nothing
-						case LK_COUNT_CONTROL_INCR1: count_buf=count_buf+1;
+						case LK_COUNT_CONTROL_INCR1: count_buf=count_buf+1;cout<<"counter:	incr 1!"<<endl;
 						case LK_COUNT_CONTROL_DIREC: count_buf=count_data.read();
 						case LK_COUNT_CONTROL_RELAT: count_buf=count_buf+count_data.read();
 						default :;//do nothing
 					}					
-					count_out.write(count_buf);
+					//count_out.write(count_buf);
 				}
+			count_out.write(count_buf);
 		}
 	SC_CTOR(lk_counter)
 		{

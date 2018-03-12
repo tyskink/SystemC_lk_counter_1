@@ -21,9 +21,9 @@ SC_MODULE(lk_counter)
 				}
 			else
 				{	
-					switch (count_ctrl)
+					switch (count_data.read())
 					{
-						case LK_COUNT_CONTROL_WAIT ://do nothing
+						case LK_COUNT_CONTROL_WAIT :;//do nothing
 						case LK_COUNT_CONTROL_INCR1: count_buf=count_buf+1;
 						case LK_COUNT_CONTROL_DIREC: count_buf=count_data.read();
 						case LK_COUNT_CONTROL_RELAT: count_buf=count_buf+count_data.read();

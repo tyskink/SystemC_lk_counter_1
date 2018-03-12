@@ -1,0 +1,27 @@
+Z                             236
+R;0;0;6;18;1
+R;0;2;6;24;1
+R;0;3;7;50;1
+R;0;4;9;41;1
+R;0;2;13;7;1
+R;0;4;15;6;1
+R;0;3;16;6;1
+R;0;4;20;16;1
+R;0;4;20;6;1
+R;0;3;21;6;1
+R;0;4;21;22;1
+R;0;5;27;4;6
+R;0;2;27;15;1
+R;0;0;28;15;1
+R;0;5;28;4;6
+E;
+Z7
+S4;count_buf
+S0;clock
+S1;lk_counter
+S2;reset
+S3;count_out
+S6;sc_core::sc_module
+S5;sensitive
+Z1
+F0;C:/Users/lk2v17/OneDrive - University of Southampton/SystemC/ModelSim/trying/lk_counter/lk_counter.cpp

@@ -1,0 +1,22 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/lk2v17/OneDrive - University of Southampton/SystemC/ModelSim/trying/sc_basic/gold
+T_opt
+!s110 1520798741
+VWjUG?EmbnITHMf_2KiOo03
+04 7 0 work sc_main 0
+=1-ffffffff-5aa58c14-314-1fb0
+o-quiet -auto_acc_if_foreign -work work
+tCvgOpt 0
+n@_opt
+OE;O;10.6d;65
+R0
+ssc_main
+!s84 1

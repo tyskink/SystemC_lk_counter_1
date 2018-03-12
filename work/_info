@@ -1,0 +1,22 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/modeltech_10.6d/examples
+T_opt
+!s110 1520883867
+V;=CgjZIOHB7YYzm>4MOf[2
+04 7 0 work sc_main 0
+=1-ffffffff-5aa6d89b-2f4-5064
+o-quiet -auto_acc_if_foreign -work work
+tCvgOpt 0
+n@_opt
+OE;O;10.6d;65
+ssc_main
+!s84 1
+R0

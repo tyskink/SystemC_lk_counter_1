@@ -39,12 +39,12 @@ int sc_main(int argc, char *argv[] )
 
 	//LK_COUNT_CONTROL_INCR1
 	count_ctrl=LK_COUNT_CONTROL_INCR1;
-	sc_start(10,SC_NS);	
+	sc_start(20,SC_NS);	
 	
 	//LK_COUNT_CONTROL_DIREC
 	count_ctrl=LK_COUNT_CONTROL_DIREC;
 	count_data=2;
-	sc_start(1,SC_NS);	
+	sc_start(2,SC_NS);	
 	count_ctrl=LK_COUNT_CONTROL_INCR1;
 	sc_start(10,SC_NS);		
 
@@ -52,7 +52,7 @@ int sc_main(int argc, char *argv[] )
 	//LK_COUNT_CONTROL_RELAT
 	count_ctrl=LK_COUNT_CONTROL_RELAT;
 	count_data=2;
-	sc_start(1,SC_NS);	
+	sc_start(2,SC_NS);	
 	count_ctrl=LK_COUNT_CONTROL_INCR1;
 	sc_start(10,SC_NS);		
 	
@@ -60,7 +60,7 @@ int sc_main(int argc, char *argv[] )
 	//LK_COUNT_CONTROL_WAIT
 	count_ctrl=LK_COUNT_CONTROL_WAIT;
 	count_data=2;
-	sc_start(1,SC_NS);	
+	sc_start(2,SC_NS);	
 	count_ctrl=LK_COUNT_CONTROL_INCR1;
 	sc_start(10,SC_NS);	
 	

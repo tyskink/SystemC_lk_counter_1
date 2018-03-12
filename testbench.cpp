@@ -23,9 +23,17 @@ int sc_main(int argc, char *argv[] )
 	//start
 	sc_start(1,SC_NS);
 	
+	//reset
 	// testbench could be putting here as a part of top level module
 	clock=SC_LOGIC_0;	//using SC_LOGIC_0 or SC_LOGIC_1 for sc_signal<sc_logic> variables
 						//may using 0 or 1 for sc_signal<bool>
+	sc_start(1,SC_NS);
+	reset=SC_LOGIC_1;
+	sc_start(1,SC_NS);
+	reset=SC_LOGIC_0;
+	count_ctrl=LK_COUNT_CONTROL_INCR1;
+	sc_start(1,SC_NS);
+	reset=SC_LOGIC_1;
 	for(int i=0;i<10;i++)
 	{
 		clock=SC_LOGIC_0;
@@ -33,11 +41,7 @@ int sc_main(int argc, char *argv[] )
 		clock=SC_LOGIC_1;
 		sc_start(1,SC_NS);		
 	}
-	reset=SC_LOGIC_1;
-	sc_start(1,SC_NS);
-	reset=SC_LOGIC_0;
-	sc_start(1,SC_NS);
-	reset=SC_LOGIC_1;
+	
 	for(int i=0;i<10;i++)
 	{
 		clock=SC_LOGIC_0;

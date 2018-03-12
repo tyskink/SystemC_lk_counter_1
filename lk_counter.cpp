@@ -2,25 +2,33 @@
 //2018年3月11日20点46分
 #include "systemc.h"
 #include "lk_config.h"
-#//define COUNTER_ADDRESSING_BIT_NUMBER 4
+
 SC_MODULE(lk_counter)
 {
 	sc_in<sc_logic> clock,reset;
-	sc_in<>
-	sc_out<sc_uint<COUNTER_ADDRESSING_BIT_NUMBER> > count_out;
+	sc_in<sc_uint<2> > count_ctrl;
+	sc_in<sc_uint<LK_COUNTER_ADDRESSING_BIT_NUMBER> > count_data;
+	sc_out<sc_uint<LK_COUNTER_ADDRESSING_BIT_NUMBER> > count_out;
 
-	sc_uint<COUNTER_ADDRESSING_BIT_NUMBER> count_buf;//as a middle variable or a buf ot a wire?
+	sc_uint<LK_COUNTER_ADDRESSING_BIT_NUMBER> count_buf;//as a middle variable or a buf ot a wire?
 
 	void count()
 		{
-			if(reset.read()==1)
+			if(reset.read()==0)
 				{
 					count_buf=0;
 					count_out.write(0);
 				}
 			else
 				{	
-					count_buf=count_buf+1;
+					switch (count_ctrl)
+					{
+						case LK_COUNT_CONTROL_WAIT ://do nothing
+						case LK_COUNT_CONTROL_INCR1: count_buf=count_buf+1;
+						case LK_COUNT_CONTROL_DIREC: count_buf=count_data.read();
+						case LK_COUNT_CONTROL_RELAT: count_buf=count_buf+count_data.read();
+						default :;//do nothing
+					}					
 					count_out.write(count_buf);
 				}
 		}

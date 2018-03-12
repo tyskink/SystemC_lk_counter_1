@@ -6,7 +6,8 @@
 int sc_main(int argc, char *argv[] )
 {
 	//signal declarations
-	sc_signal<sc_logic>clock,reset;
+	sc_clock clock ("clock",2,0.5,1,true);
+	sc_signal<sc_logic>reset;
 	
 	sc_signal<sc_uint<2> > count_ctrl;
 	sc_signal<sc_uint<LK_COUNTER_ADDRESSING_BIT_NUMBER> > count_data;
@@ -26,7 +27,7 @@ int sc_main(int argc, char *argv[] )
 	//std::cout<<"testbench:	start!"<<endl;
 	//reset
 	// testbench could be putting here as a part of top level module
-	clock=SC_LOGIC_0;	//using SC_LOGIC_0 or SC_LOGIC_1 for sc_signal<sc_logic> variables
+	//clock=SC_LOGIC_0;	//using SC_LOGIC_0 or SC_LOGIC_1 for sc_signal<sc_logic> variables
 						//may using 0 or 1 for sc_signal<bool>
 	sc_start(1,SC_NS);
 	reset=SC_LOGIC_1;
@@ -35,21 +36,29 @@ int sc_main(int argc, char *argv[] )
 	
 	sc_start(1,SC_NS);
 	reset=SC_LOGIC_1;
-	for(int i=0;i<10;i++)
-	{
-		clock=SC_LOGIC_0;
-		sc_start(1,SC_NS);
-		clock=SC_LOGIC_1;
-		sc_start(1,SC_NS);		
-	}
+
 	
-	for(int i=0;i<10;i++)
-	{
-		clock=SC_LOGIC_0;
-		sc_start(1,SC_NS);
-		clock=SC_LOGIC_1;
-		sc_start(1,SC_NS);		
-	}
+	//LK_COUNT_CONTROL_DIREC
+	count_ctrl=LK_COUNT_CONTROL_DIREC;
+	count_data=2;
+	sc_start(1,SC_NS);	
+	count_ctrl=LK_COUNT_CONTROL_INCR1;
+	
+
+	
+	//LK_COUNT_CONTROL_RELAT
+	count_ctrl=LK_COUNT_CONTROL_RELAT;
+	count_data=2;
+	sc_start(1,SC_NS);	
+	count_ctrl=LK_COUNT_CONTROL_INCR1;
+	
+	
+	
+	//LK_COUNT_CONTROL_WAIT
+	count_ctrl=LK_COUNT_CONTROL_WAIT;
+	count_data=2;
+	sc_start(1,SC_NS);	
+	count_ctrl=LK_COUNT_CONTROL_INCR1;
 	
 }//a new line
 /*

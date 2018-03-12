@@ -5,7 +5,8 @@
 
 SC_MODULE(lk_counter)
 {
-	sc_in<sc_logic> clock,reset;
+	sc_in_clk clock;
+	sc_in<sc_logic> reset;
 	sc_in<sc_uint<2> > count_ctrl;
 	sc_in<sc_uint<LK_COUNTER_ADDRESSING_BIT_NUMBER> > count_data;
 	sc_out<sc_uint<LK_COUNTER_ADDRESSING_BIT_NUMBER> > count_out;
@@ -38,7 +39,7 @@ SC_MODULE(lk_counter)
 	SC_CTOR(lk_counter)
 		{
 			SC_METHOD(count);
-			sensitive<<reset.neg();
+			sensitive<<reset.neg();//asynchronous negative reset
 			sensitive<<clock.pos();
 		}
 };//a new line

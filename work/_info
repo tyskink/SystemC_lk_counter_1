@@ -7,12 +7,12 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/modeltech_10.6d/examples
+Z0 dC:/Users/lk2v17/OneDrive - University of Southampton/SystemC/ModelSim/trying/lk_counter
 T_opt
-!s110 1520883867
-V;=CgjZIOHB7YYzm>4MOf[2
+!s110 1520945816
+V6:3@XZCGlOUGjh^IE<XBP0
 04 7 0 work sc_main 0
-=1-ffffffff-5aa6d89b-2f4-5064
+=1-ffffffff-5aa7ca98-131-358
 o-quiet -auto_acc_if_foreign -work work
 tCvgOpt 0
 n@_opt

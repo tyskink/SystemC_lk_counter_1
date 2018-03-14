@@ -62,7 +62,7 @@ int sc_main(int argc, char *argv[] )
 	count_data=2;
 	sc_start(2,SC_NS);	
 	count_ctrl=LK_COUNT_CONTROL_INCR1;
-	sc_start(100,SC_NS);	
+	sc_start(100,SC_NS);//a long time to avoid the simulation time overflow
 	
 	
 	return 0;
